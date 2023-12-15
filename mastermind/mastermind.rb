@@ -3,8 +3,6 @@ module Mastermind
     def initialize
       @row = []
       @exact_close = []
-      @exact = 0
-      @close = 0
       @correct_order = []
       @range = 10
       @round = 0
@@ -37,8 +35,7 @@ module Mastermind
           close += 1 if @correct_order[i] == @row[@round][a] && @row[@round][i] != @correct_order[i]
         end
       end
-      new_arr = [exact, close]
-      @exact_close[@round] = new_arr
+      @exact_close[@round] = [exact, close]
       exact = 0
       close = 0
     end
